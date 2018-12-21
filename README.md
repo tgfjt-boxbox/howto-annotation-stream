@@ -1,10 +1,13 @@
 # howto annotation stream
 
+```shell
+npm link
+```
 
 ```shell
-cat sample.txt | ./bin/annotation
+cat sample.txt | annotation
 
-./bin/annotation sample.txt
+annotation sample.txt
 ```
 
 ## Note

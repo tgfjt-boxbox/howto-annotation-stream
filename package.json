@@ -1,0 +1,24 @@
+{
+  "name": "howto-annotation-stream",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "annotation": "./bin/annotation"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgfjt-boxbox/howto-annotation-stream.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgfjt-boxbox/howto-annotation-stream/issues"
+  },
+  "homepage": "https://github.com/tgfjt-boxbox/howto-annotation-stream#readme"
+}

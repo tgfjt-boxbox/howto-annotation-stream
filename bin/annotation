@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+const fs = require("fs");
+const path = require("path");
+const replace = require("../lib/replace");
+
+const isTTY = process.stdin.isTTY;
+
+if (isTTY) {
+  const target = path.resolve(__dirname, "../", process.argv[2]);
+  replace(fs.createReadStream(target));
+} else {
+  const stdin = process.openStdin();
+
+  const encoding = "utf8";
+  let data = "";
+
+  stdin.resume();
+  stdin.setEncoding(encoding);
+
+  process.on("SIGINT", () => {
+    console.log("Got a SIGINT.");
+    process.exit(0);
+  });
+
+  stdin.on("data", chunk => {
+    data += chunk;
+    replace(chunk);
+  });
+
+  stdin.on("end", () => {
+    process.exit(0);
+  });
+}
